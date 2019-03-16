@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/mall/mall",
+    "pages/cart/cart",
+    "pages/mine/mine",
+    "pages/search/search",
+    "pages/details/details"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#050505",
+    "navigationBarTitleText": "兰蔻官网商城",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "backgroundColor":"#050505",
+    "borderStyle":"white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath":"icons/home.png",
+        "selectedIconPath":"icons/home-select.png"
+      },
+      {
+        "pagePath": "pages/mall/mall",
+        "text": "商品 ",
+        "iconPath": "icons/mall.png",
+        "selectedIconPath": "icons/mall-selsect.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "icons/cart.png",
+        "selectedIconPath": "icons/cart-select.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "icons/mine.png",
+        "selectedIconPath": "icons/mine-select.png"
+      }
+    ]
+  }
+}
+

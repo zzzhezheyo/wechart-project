@@ -1,0 +1,35 @@
+<!--index.wxml-->
+ <!-- <view class="container"> -->
+  <!--<view class="search-input">
+    <input placeholder="小黑瓶持续粉底液" />
+  </view> -->
+<view class="topbar">
+  <view class="location">
+    <image style="height:24px;width:24px" src="/icons/location.png"></image>
+    定位中....
+  </view>
+  <view class="searchbar" catchtap='tosearch'>
+    <view class="search-input">兰蔻小黑瓶</view>
+    <view class="search-btn">搜索</view>
+  </view>
+</view>
+
+  <!-- 导航条 -->
+  <view class="nav-swiper">
+      <view class="page-body">
+    <view class="page-section page-section-spacing swiper">
+      <swiper
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+        <block wx:for="{{imgsURL}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+      </view>
+    </view>
+  </view>
+    
+
+<!-- </view> -->

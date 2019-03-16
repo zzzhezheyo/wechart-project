@@ -1,0 +1,29 @@
+<!--pages/mall/mall.wxml-->
+<view class="sidebar">
+  <view
+    wx:for="{{navs}}"
+    wx:key="{{item.id}}"
+    data-id="{{item.id}}"
+    class="nav-item {{currentCatedId === item.id ? 'current':''}}"
+    catchtap="changeCate"
+  >{{item.name}}</view>
+</view>
+
+<scroll-view 
+  class="content"
+  scroll-y
+  bindscrolltoupper="refreshList"
+  bindscrolltolower="loadMore"
+>
+<navigator
+  url='/pages/details/details?id={{item.id}}'
+  wx:for="{{products}}"
+  wx:key="{{item.id}}"
+  class="product"
+>
+   <image style="width:240rpx;height:200rpx" src="{{item.image}}"/>
+   {{item.title}}
+</navigator>
+<view wx:if="{{isEnd}}">已经加载到最后一页</view>
+</scroll-view>
+
