@@ -6,7 +6,7 @@
 <view class="topbar">
   <view class="location">
     <image style="height:24px;width:24px" src="/icons/location.png"></image>
-    定位中....
+      {{city === ''? ' 定位中....':city}}
   </view>
   <view class="searchbar" catchtap='tosearch'>
     <view class="search-input">兰蔻小黑瓶</view>

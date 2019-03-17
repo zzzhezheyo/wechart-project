@@ -1,6 +1,8 @@
 //app.js
+import store from './redux/store.js'
 App({
   onLaunch: function () {
+    this.setBadge()
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -35,5 +37,41 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+  cart: wx.getStorageSync("lk-cart") || [],
+  setBadge(){
+    const cart=wx.getStorageSync("lk-cart")||[]
+    if(!cart.length){
+      return;
+    }
+    const total = cart.reduce((result, item) => {
+      result += item.count;
+      return result;
+    }, 0)
+    wx.setTabBarBadge({
+      index: 2,
+      text: total.toString(),
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
+  addGlobalCart(productInfo){
+    const isInCart =this.cart.some(item=>item.id===productInfo.id)
+    if(isInCart){
+      this.cart=this.cart.map(item=>{
+        if (item.id === productInfo.id) {
+          item.count += 1
+        }
+        return item;
+      })
+    }else{
+      this.cart.push({
+        ...productInfo,
+        count:1
+      })
+    }
+    wx.setStorageSync('lk-cart', this.cart) 
+    this.setBadge() 
   }
 })

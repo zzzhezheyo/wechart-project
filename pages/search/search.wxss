@@ -1,1 +1,17 @@
-/* pages/search/search.wxss */
+.search-words-list {
+  padding: 30rpx;
+  font-size: 14px;
+}
+.search-words-list .keywords {
+  display: flex;
+  flex-wrap: wrap;
+}
+.search-words-tag {
+  background-color: #f2f2f2;
+  padding: 12rpx;
+  margin: 8rpx;
+  color: #666;
+}
+.search-words-tag.hot {
+  color: #f00;
+}

@@ -1,12 +1,8 @@
 // pages/details/details.js
+const app = getApp()
 Page({
-  toHome(){
-    wx.switchTab({
-      url: '/pages/home/home',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
-    })
+  addToCart(){
+   app.addGlobalCart(this.options)
   },
   /**
    * 页面的初始数据
@@ -19,10 +15,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    this.options = options
   },
 
-  /**
+  /**    
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
@@ -40,7 +36,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    
   },
 
   /**

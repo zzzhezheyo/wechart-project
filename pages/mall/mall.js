@@ -1,7 +1,10 @@
 // pages/mall/mall.js
 import ajax from '../../request/ajax.js'
-
+const app = getApp()
 Page({
+  addToCart(e){
+    app.addGlobalCart(e.currentTarget.dataset)
+  },
   refreshList(){
     this.setData({
       start:0,
@@ -77,7 +80,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    app.setBadge()
   },
 
   /**
